@@ -1,5 +1,5 @@
 import numpy as np
-import DecisionTree_UsingArrays as dectree
+import DecisionTree_draft as dectree
 import random as rnd
 
 """
@@ -9,12 +9,26 @@ I have decision trees. Now :
 3. Get prediction.
 """
 
+# CHECK WHY SORTING IS NEEDED IN RANDOM SAMPLES. DOES THE ORDER IN WHICH FEATURES ARE LISTED MAKE A BIG DIFFERENCE? WHY?
+# THIS TIES BACK TO HOW NO `POSSIBLE SPLIT` IS HANDLED AT THE TREE LEVEL.
+
 
 def sampler(num_of_features : int, syllabus_size : int, num_of_trees : int) :
     box = []
     for iterator in range(num_of_trees):
-        box.append(rnd.sample(range(num_of_features), syllabus_size))
+        box.append(rnd.sample(range(num_of_features), syllabus_size)) # This sorting is needed. WHY?????
     return box # This is a list of lists
+
+def train_rf(x,y, syllabus_size, num_of_trees, smallest_class = 1) :
+    n_features, n_samples = x.shape
+    sampler_result = sampler(n_features, syllabus_size, num_of_trees)
+    iterator = 0
+    while iterator < num_of_trees :
+        temp_x = np.zeros((syllabus_size, n_samples))
+        temp_y = np.zeros((n_samples,))
+        temp_y[:] = y[iterator]
+
+    pass
 
 
 def train_random_forest(x,y, syllabus_size, num_of_trees, smallest_class = 1)->list[dectree.Tree] :
@@ -42,6 +56,11 @@ def train_random_forest(x,y, syllabus_size, num_of_trees, smallest_class = 1)->l
         temp_tree = dectree.build_tree(temp_x,temp_y, smallest_class)
         my_trees.append(temp_tree)
         iterator += 1
+        print("Added a tree")
+        print()
+        temp_x = None
+        temp_y = None
+        temp_tree = None
         pass
     # Now we have a list of trees. A random forest, if you will
     return my_trees
