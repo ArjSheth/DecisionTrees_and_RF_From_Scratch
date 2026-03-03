@@ -1,5 +1,5 @@
 import numpy as np
-
+# If split value cannot split the thing (if one is empty) then call it a leaf and don't split further
 
 class Node:
     def __init__(self, value):
@@ -33,20 +33,6 @@ class Tree:
         else :
             return traverse_nodes(self.root, x)
 
-        # active_node = self.root.value
-        # if active_node is None:
-        #     raise ValueError("Node empty")
-        # else :
-        #     print(f"active node: {active_node}, has value {active_node.value}")
-        #     if active_node.value[0] is None :
-        #         return active_node.value[2], active_node.value[3]
-        #     else :
-        #         sp_ft = active_node.value[0]
-        #         sp_val = active_node.value[1]
-        #         if x[sp_ft] <= sp_val:
-        #             return Tree.predict(active_node.left, x)
-        #         else :
-        #             return Tree.predict(active_node.right, x)
 
 # -------------------------------------------------------------------------------------------------
 
@@ -120,7 +106,7 @@ def make_error_array(x: np.ndarray, y: np.ndarray):
     return split_feature, split_value, left_x, left_y, right_x, right_y
 
 
-def build_tree(x: np.ndarray, y: np.ndarray, smallest_class: int = 10) -> Tree:
+def build_tree(x: np.ndarray, y: np.ndarray, smallest_class: int = 1) -> Tree:
     """
     Recursively builds a decision tree.
 
@@ -132,7 +118,7 @@ def build_tree(x: np.ndarray, y: np.ndarray, smallest_class: int = 10) -> Tree:
     """
     DT = Tree()
 
-    if len(y) == 0:
+    if y.shape == () :
         return DT
 
     # Stopping condition: too few samples → leaf node
@@ -144,15 +130,20 @@ def build_tree(x: np.ndarray, y: np.ndarray, smallest_class: int = 10) -> Tree:
 
     # Find the best split
     split_feature, split_value, left_x, left_y, right_x, right_y = make_error_array(x, y)
-
+    print(f"sf, sv, lx, rx, = {split_feature}, {split_value}, {left_x}, {right_x}")
     # Internal node: prediction fields unused at this level
     DT.insert(np.array([split_feature, split_value, None, None], dtype=object))
+    if left_x.shape[1] == 0 or right_x.shape[1] == 0 :
+        print(f"False split! Will make leaf.")
+        prediction = mean_prediction(y)
+        DT.insert(np.array([None, None, prediction, prediction]))
+        return DT
+    else :
+        # Recurse into left and right subtrees
+        left_subtree  = build_tree(left_x,  left_y,  smallest_class)
+        right_subtree = build_tree(right_x, right_y, smallest_class)
 
-    # Recurse into left and right subtrees
-    left_subtree  = build_tree(left_x,  left_y,  smallest_class)
-    right_subtree = build_tree(right_x, right_y, smallest_class)
-
-    DT.root.left  = left_subtree.root
-    DT.root.right = right_subtree.root
+        DT.root.left  = left_subtree.root
+        DT.root.right = right_subtree.root
 
     return DT
