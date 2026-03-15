@@ -19,18 +19,6 @@ def sampler(num_of_features : int, syllabus_size : int, num_of_trees : int) :
         box.append(rnd.sample(range(num_of_features), syllabus_size)) # This sorting is needed. WHY?????
     return box # This is a list of lists
 
-def train_rf(x,y, syllabus_size, num_of_trees, smallest_class = 1) :
-    n_features, n_samples = x.shape
-    sampler_result = sampler(n_features, syllabus_size, num_of_trees)
-    iterator = 0
-    while iterator < num_of_trees :
-        temp_x = np.zeros((syllabus_size, n_samples))
-        temp_y = np.zeros((n_samples,))
-        temp_y[:] = y[iterator]
-
-    pass
-
-
 def train_random_forest(x,y, syllabus_size, num_of_trees, smallest_class = 1)->list[dectree.Tree] :
     """
     x.shape = (features,samples)
@@ -61,7 +49,6 @@ def train_random_forest(x,y, syllabus_size, num_of_trees, smallest_class = 1)->l
         temp_x = None
         temp_y = None
         temp_tree = None
-        pass
     # Now we have a list of trees. A random forest, if you will
     return my_trees
 

@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bc19c8c9-3b4e-4ce2-8470-213b08a27c46" name="Changes" comment="Implemented random forests. Fixed tree's feature split MSE-tie-breaking logic. Will replace DecisionTree_UsingArrays.py.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DecisionTree_UsingArrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/DecisionTree_InitialDraft.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DecisionTree_draft.py" beforeDir="false" afterPath="$PROJECT_DIR$/DecisionTree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RandomForests.py" beforeDir="false" afterPath="$PROJECT_DIR$/RandomForests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing_syntax.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing_syntax.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +15,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -76,7 +73,7 @@
       <workItem from="1772514305529" duration="6877000" />
       <workItem from="1772541796315" duration="6326000" />
       <workItem from="1772549136278" duration="1708000" />
-      <workItem from="1773572032360" duration="758000" />
+      <workItem from="1773572032360" duration="8365000" />
     </task>
     <task id="LOCAL-00001" summary="Decision Trees implemented from scratch in python">
       <option name="closed" value="true" />
@@ -102,7 +99,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772550586510</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implemented random forests. Fixed tree's feature split MSE-tie-breaking logic. Will replace DecisionTree_UsingArrays.py.">
+      <option name="closed" value="true" />
+      <created>1773572864042</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773572864042</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Implemented random forests. Fixed tree's feature split MSE-tie-breaking logic. Will replace DecisionTree_UsingArrays.py.">
+      <option name="closed" value="true" />
+      <created>1773572890010</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773572890010</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,7 +139,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NativeRandomForests$RandomForests.coverage" NAME="RandomForests Coverage Results" MODIFIED="1772521160770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NativeRandomForests$testing_syntax.coverage" NAME="testing_syntax Coverage Results" MODIFIED="1773572780705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NativeRandomForests$testing_syntax.coverage" NAME="testing_syntax Coverage Results" MODIFIED="1773578606975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NativeRandomForests$DecisionTree.coverage" NAME="DecisionTree Coverage Results" MODIFIED="1772459342217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
