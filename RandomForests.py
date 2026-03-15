@@ -1,5 +1,5 @@
 import numpy as np
-import DecisionTree_draft as dectree
+import DecisionTree as dectree
 import random as rnd
 
 """
